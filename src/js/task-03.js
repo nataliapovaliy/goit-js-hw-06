@@ -14,17 +14,22 @@ const images = [
 ];
 
 const listGallery = document.querySelector('.gallery');
+const listImages = images
+  .map(img => `<li><img src = ${img.url} alt = ${img.alt} height="218"></li>`)
+  .join("");
 
-// for (const i of images) {
-//   let lastEl = document.createElement("li");
-//   lastEl.textContent = i;
-//   listIngredients.append(lastEl);
-// }
+listGallery.insertAdjacentHTML("beforeend", listImages);
+
+listGallery.style.display = "flex";
+listGallery.style.gap = "15px";
+// listGallery.style.list-style = "none";
 
 
 
-// Напиши скрипт для створення галереї зображень на підставі масиву даних. HTML містить список ul.gallery.
-//* <ul class="gallery"></ul>
-// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
+
+// Напиши скрипт для створення галереї зображень на підставі масиву даних. 
+// HTML містить список ul.gallery. * <ul class="gallery"></ul>
+// Використовуй масив об'єктів images для створення елементів <img>, вкладених в <li>. 
+// Для створення розмітки використовуй шаблонні рядки і метод insertAdjacentHTML().
 // Усі елементи галереї повинні додаватися в DOM за одну операцію додавання.
 // Додай мінімальне оформлення галереї флексбоксами або грідами через CSS класи. */}
