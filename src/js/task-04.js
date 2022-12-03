@@ -1,21 +1,23 @@
 const listCounter = document.querySelector('#counter');
-const clickEl = listCounter.querySelector('button');
-const counterClickValue = document.querySelector('#value');
+const elDecrement = listCounter.querySelector('button[data-action="decrement"]');
+const elIncrement = listCounter.querySelector('button[data-action="increment"]');
+const counterClickValue = listCounter.querySelector('#value');
 
 let counterValue = 0;
 
-function counterDecrement () {
+function counterDecrement() {
     counterValue -= 1;
     counterClickValue.textContent = counterValue;
-};
+    };
 
 function counterIncrement() {
-    counterIncrement += 1;
+    counterValue += 1;
     counterClickValue.textContent = counterValue;
 };
 
-clickEl.addEventListener("click", counterDecrement);
-clickEl.addEventListener("click", counterIncrement);
+elIncrement.addEventListener("click", counterIncrement);
+elDecrement.addEventListener("click", counterDecrement);
+
 
 
 
