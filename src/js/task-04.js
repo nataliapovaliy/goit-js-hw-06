@@ -28,9 +28,3 @@ elDecrement.addEventListener("click", counterDecrement);
 // Додай слухачів кліків до кнопок, всередині яких збільшуй або зменшуй значення лічильника.
 // Оновлюй інтерфейс новим значенням змінної counterValue.
 
-
-// <div id="counter">
-//  <button type="button" data-action="decrement">-1</button>
-//  <span id="value">0</span>
-//  <button type="button" data-action="increment">+1</button>
-// </div>

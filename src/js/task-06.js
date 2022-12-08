@@ -1,40 +1,33 @@
 const validInput = document.querySelector('#validation-input');
 const totalValid = validInput.dataset.length;
+const styleValid = document.querySelector('#validation-input.valid');
+const steleInvalid = document.querySelector('#validation-input.invalid');
 let counter = 0;
 
 validInput.addEventListener("input", (event) => {
-    const elementInput = event.currentTarget.value;
-})
-
-validInput.addEventListener("blur", (event) => {
-    console.log(elementInput);
-    // let validInputArray = elementInput.split("");
-    // for (const i of validInputArray) {
-    //     counter += 1;
-    // }
+    let elementInput = event.currentTarget.value;
+    // console.log(event.currentTarget.value);
+    counter += 1;
     // console.log(counter);
 })
 
+validInput.addEventListener("blur", () => {
+    console.log('itog', counter);
+    console.log('length', totalValid);
+    if (counter == totalValid) {
+        // validInput.style.currentTarget.value(#validation-input.valid);
+        validInput.style.borderColor = "#4caf50";
+        validInput.style = styleValid;
+        console.log('Valid');
+    } else {
+        validInput.style.borderColor = "#f44336";
+        console.log('invalid');
+    }
+})
 
 
-// validInput.addEventListener("click", () => {
-//     validInput.focus();
-//     const validInputArray = validInput.split("");
-// })
-// console.log(validInputArray);
 
-
-// if (validInput.blur()) {
-//     const validInputArray = validInput.split("");
-//     for (const i of validInputArray) {
-//         counter += 1;
-//     }
-//     console.log(counter);
-//     if (counter === totalValid) {
-
-//     }
-// }
-
+// ???????? Как правильно сделать border-color
 
 // Напиши скрипт, який під час втрати фокусу на інпуті (подія blur), 
 // перевіряє його вміст щодо правильної кількості введених символів.

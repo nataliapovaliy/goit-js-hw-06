@@ -22,7 +22,7 @@ listGallery.insertAdjacentHTML("beforeend", listImages);
 
 listGallery.style.display = "flex";
 listGallery.style.gap = "15px";
-// listGallery.style.list-style = "none";
+listGallery.style.listStyle = "none";
 
 
 

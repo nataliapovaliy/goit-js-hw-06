@@ -3,20 +3,11 @@ const nameOutput = document.querySelector('#name-output');
 
 nameInput.addEventListener("input", (event) => {
     nameOutput.textContent = event.currentTarget.value;
-    // if (event == undefined) {
-    //     nameOutput.textContent = "Anonymous";
-    //     console.log(nameOutput);
-    // }
+    if (event.currentTarget.value === "") {
+        nameOutput.textContent = "Anonymous";
+    }
     
 })
-
-
-
-
-// ??????????? якщо інпут порожній
-
-// <input type="text" id="name-input" placeholder="Please enter your name" />
-// <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 
 
 
