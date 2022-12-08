@@ -1,15 +1,34 @@
 const divControls = document.querySelector("#controls");
 const divBoxes = document.querySelector("#boxes");
 const inputAmount = document.querySelector("input");
+const dataBtnCreate = divControls.querySelector('button[data-create]');
+const dataBtnDestroy = divControls.querySelector('button[data-destroy]');
+let size = 30;
+let amount = 0;
 
-inputAmount.addEventListener("input", (event) => {
-  let amount = event.currentTarget.value;
-  console.log(amount);
-})
+dataBtnCreate.addEventListener("click", createBoxes);
+dataBtnDestroy.addEventListener("click", destroyBoxes);
 
-function createBoxes(amount) {
-  for (const num = 1 of amount) {
-    const divEl
+  inputAmount.addEventListener("change", () => {
+    return amount = inputAmount.value;
+  })
+
+function createBoxes() {
+  for (let i = 1; i <= Number(amount); i++) {
+    const divEl = document.createElement('div');
+    divEl.id = `divnumber${i}`
+    divEl.style.width = `${size}px`
+    divEl.style.height = `${size}px`
+    divEl.style.backgroundColor = `${getRandomHexColor()}`
+    divBoxes.append(divEl);
+    size += 10;
+  }
+}
+
+function destroyBoxes() {
+  for (let i = 1; i <= Number(amount); i++) {
+    let elem = divBoxes.querySelector("div")
+    elem.remove();
   }
 }
 

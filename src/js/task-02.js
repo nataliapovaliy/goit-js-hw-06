@@ -12,6 +12,7 @@ const listIngredients = document.querySelector('#ingredients');
 for (const i of ingredients) {
   let lastEl = document.createElement("li");
   lastEl.textContent = i;
+  lastEl.class = "item";
   listIngredients.append(lastEl);
 }
 
